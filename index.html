@@ -32,12 +32,14 @@ var tableWalker = {
 }
 //var tw = new tableWalker();
 tableWalker.setFieldList("a,b,c,d,e");
+function myFunction() {
+  document.getElementById("id_setFieldList").innerHTML = "<b>"+(tableWalker.fieldCount).toString()+"</b>";
+}
 
-document.getElementById("id_setFieldList").innerHTML = "<b>"+(tableWalker.fieldCount).toString()+"</b>";
 console.log(tableWalker.fieldCount);
 </script>
 <body>
   <div> Hello World!</div>
-  <div id="id_setFieldList"> 123</div>
+  <div id="id_setFieldList" onclick="myFunction()"> 123</div>
 </body>
 </html>
