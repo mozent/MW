@@ -1,0 +1,42 @@
+<html>
+<head></head>
+<script>
+var tableWalker = {
+	variableName : "variable",
+	dataName : "data",
+	fieldName : "fields",
+	fieldCount : 0,
+	fieldArray : new Array(),
+
+	
+	// Set the variable names for the variables we use in the context
+	// We might get away without them once we can make sure we have stable JSON storage
+	setVariableNames : function(vname) {
+		this.variableName = vname;
+		this.dataName = vname+"_data";
+		this.fieldName = vname+"_fields";
+	},
+	
+	// The fields for this datasource
+	setFieldList : function(fList) {
+		if (fList == null || fList == "") {
+			this.fieldList = ""; //viewScope.get(this.fieldName)
+		} else {
+			// We overwrite the field list
+			//viewScope.put(this.fieldName,fList);
+			this.fieldList = fList;
+		}
+		this.fieldArray = this.fieldList.split(",");
+		this.fieldCount = this.fieldArray.length;
+	}
+}
+//var tw = new tableWalker();
+tableWalker.setFieldList("a,b,c,d,e");
+
+
+console.log(tableWalker.fieldCount);
+</script>
+<body>
+  <div> Hello World!</div>
+</body>
+</html>
